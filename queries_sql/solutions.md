@@ -254,3 +254,25 @@ ultrayogur    Macastre    22.95
 ultrayogur    Valencia    12.6
 ultrayogur    accelerato  2.0
 ```
+```sql
+alter table acelerador_particulas add column imputation text not null default ‘accelerator’;
+
+create view costes_proyecto20 as
+select  
+   project_name as project_name, 
+   imputation as imputation, 
+   sum(total_euros) as total_euros from (
+   Select
+      costes_empleados.project_name as project_name,
+      costes_empleados.imputation as imputation,
+      costes_empleados.euros as total_euros
+from
+   costes_empleados
+union all
+select
+   acelerador_particulas.project_name as project_name,
+   acelerador_particulas.imputation as imputation,
+   acelerador_particulas.euros as total_euros
+from
+   acelerador_particulas)
+group by project_name, imputation;
