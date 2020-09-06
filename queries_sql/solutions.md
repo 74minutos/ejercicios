@@ -262,17 +262,17 @@ select
    project_name as project_name, 
    imputation as imputation, 
    sum(total_euros) as total_euros from (
-   Select
+   select
       costes_empleados.project_name as project_name,
       costes_empleados.imputation as imputation,
       costes_empleados.euros as total_euros
-from
-   costes_empleados
-union all
-select
-   acelerador_particulas.project_name as project_name,
-   acelerador_particulas.imputation as imputation,
-   acelerador_particulas.euros as total_euros
-from
-   acelerador_particulas)
+   from
+      costes_empleados
+   union all
+   select
+      acelerador_particulas.project_name as project_name,
+      acelerador_particulas.imputation as imputation,
+      acelerador_particulas.euros as total_euros
+   from
+      acelerador_particulas)
 group by project_name, imputation;
