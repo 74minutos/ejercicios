@@ -116,6 +116,7 @@ Queremos una tabla `horas_nombre_macastre` que represente los datos de imputaci√
 * employee_name
 * project_name
 * hours
+
 Solution:
 
 ```sql
@@ -160,7 +161,7 @@ pepe pepez       ultrayogur    5           Macastre
 
 Solution
 
-```
+```sql
 alter table horas_valencia add column imputation text not null default 'Valencia';
 create table horas_empleados as
 select
