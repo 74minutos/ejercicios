@@ -207,7 +207,8 @@ select
    (sueldos.euros_hour*horas_empleados.hours) as euros
  from
    horas_empleados
-   inner join sueldos on sueldos.employee_name = horas_empleados.employee_name;
+   inner join sueldos on sueldos.employee_name = horas_empleados.employee_name
+ order by employee_name;
 ```
 
 #### pregunta 4
