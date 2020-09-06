@@ -120,7 +120,7 @@ Queremos una tabla `horas_nombre_macastre` que represente los datos de imputaci√
 Solution:
 
 ```sql
-create table horas_nombre_macastre as
+create view horas_nombre_macastre as
 select
    empleados_macastre.name as employee_name,
    proyectos.name as project_name,
@@ -164,7 +164,7 @@ Solution
 ```sql
 alter table horas_macastre add column imputation text not null default 'Macastre';
 alter table horas_valencia add column imputation text not null default 'Valencia';
-create table horas_empleados as
+create view horas_empleados as
 select
    empleados_macastre.name as employee_name,
    proyectos.name as project_name,
