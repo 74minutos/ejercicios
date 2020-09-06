@@ -219,6 +219,20 @@ Queremos una tabla `costes_personal_region` que agregue todas las horas invertid
 * total_hours
 * total_euros
 
+Solution
+
+```sql
+create view costes_personal_region as
+select
+   imputation as imputation,
+   sum(hours) as total_hours,
+   sum(euros) as total_euros
+from 
+   costes_empleados
+group by imputation
+order by imputation;
+```
+
 #### pregunta 5
 
 Queremos una tabla `costes_proyecto` que, para cada proyecto, agregue los costes de personal y costes en invertidos en el acelerador de partículas. El `imputation` del acelerador será 'accelerator'
