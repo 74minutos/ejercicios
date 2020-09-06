@@ -194,6 +194,22 @@ Queremos una tabla `costes_empleados` que añada una columna de euros a las hora
 * imputation
 * euros
 
+
+Solution
+
+```sql
+create view costes_empleados as
+select
+   horas_empleados.employee_name as employee_name,
+   horas_empleados.project_name as project_name,
+   horas_empleados.hours as hours,
+   horas_empleados.imputation as imputation,
+   (sueldos.euros_hour*horas_empleados.hours) as euros
+ from
+   horas_empleados
+   inner join sueldos on sueldos.employee_name = horas_empleados.employee_name;
+```
+
 #### pregunta 4
 
 Queremos una tabla `costes_personal_region` que agregue todas las horas invertidas y los euros que han costado en cada región de imputación:
