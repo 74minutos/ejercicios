@@ -162,6 +162,7 @@ pepe pepez       ultrayogur    5           Macastre
 Solution
 
 ```sql
+alter table horas_macastre add column imputation text not null default 'Macastre';
 alter table horas_valencia add column imputation text not null default 'Valencia';
 create table horas_empleados as
 select
