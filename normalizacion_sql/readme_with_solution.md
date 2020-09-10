@@ -83,12 +83,9 @@ insert into location (people_dni, address) values ("23434423F", "colon 45, valen
 insert into pet_names (id, pet_name) values ("93434423F", "pauly");
 insert into pet_names (id, pet_name) values ("93434423F", "polly");
 insert into pet_names (id, pet_name) values ("93434423F", "peter");
-insert into pet_names (id, pet_name) values ("53434423F",
- "pepe");
-insert into pet_names (id, pet_name) values ("23434423F",
- "killer");
-insert into pet_names (id, pet_name) values ("23434423F",
- "hunter");
+insert into pet_names (id, pet_name) values ("53434423F", "pepe");
+insert into pet_names (id, pet_name) values ("23434423F", "killer");
+insert into pet_names (id, pet_name) values ("23434423F", "hunter");
 ```
 
 Y este es el código para comprobar que efectivamente, se comporta como esperamos:
